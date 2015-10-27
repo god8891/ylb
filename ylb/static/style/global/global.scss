@@ -1,0 +1,152 @@
+@charset 'utf-8';
+@import 'base';
+
+*, *:after, *:before{
+	@extend %box-sizing;
+}
+html{
+	height:100%;
+}
+
+body{
+	color:$c3;
+	background-color:$white;
+	margin:0;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a{
+	text-decoration:none;
+	color:#333;
+}
+
+
+//尺寸
+$width-col:8.3333%, 16.6666%, 25%, 33.3333%, 41.6666%, 50%, 58.3333%, 66.6666%, 75%, 83.3333%, 91.6666%, 100%;
+//栅格系统
+@for $i from 1 through 12{
+	.god-col-#{$i} {
+		width:nth($width-col,$i);
+		@extend %box-szing;
+		@extend %float-l;
+		padding-right:15px;
+		padding-left:15px;
+	}
+}
+
+//块
+$display:(none:none, block:block, inline:inline, ik:inline-block, table:table, cell:table-cell, row:table-row, inherit:inherit);
+@each $key, $val in $display{
+	.god-dy-#{$key}{
+		display:#{$val};
+	}
+}
+
+//浮动
+$float: (l:left, r:right);
+@each $key,$val in $float{
+	.god-f-#{$key}{
+		float:#{$val};
+	}
+}
+
+
+//文本对齐
+$text-align:(left:left,center:center, right:right);
+@each $key, $val in $text-align{
+	.god-ag-#{$key}{
+		text-align:#{$val};
+	}
+}
+
+//垂直对其
+$vertical-align:(top:top, tp:text-top, middle:middle, bottom:$bottom, tb:text-bottom, baseline:baseline);
+@each $key,$val in $vertical-align{
+	.god-va-#{$key}{
+		vertical-align:#{$val};
+	}
+}
+
+//标题标签
+$title:h1 h2 h3 h4 h5 h6;
+@for $i from 1 through 6{
+	.god-#{nth($title,$i)}{
+		margin-#{$top}:$zero;
+		margin-#{$bottom}:$zero;
+		font-size:nth($hsize, $i);
+		line-height:nth($hline, $i);
+		font-weight:normal;
+	}
+}
+
+//字体
+.god-family-yh{
+	font-family:'Microsoft Yahei';
+}
+
+//颜色
+.c9{
+	color:$c9;
+}
+.c6{
+	color:$c6;
+}
+.c3{
+	color:$c3;
+}
+.cf{
+	color:$cf;
+}
+
+.pd-zero{
+	padding:$zero;
+}
+
+.mg-zero{
+	margin:$zero;
+}
+
+.container{
+	width:1170px;
+	padding:0 15px;
+	margin-left:auto;
+	margin-right:auto;
+	@extend %clearfix;
+}
+
+
+//头部样式
+.site-title{
+	float:left;
+	line-height:20px;
+	padding:15px;
+	margin-top:0;
+	margin-bottom:0;
+	font-size:18px;
+	font-family:'Miscrosoft YaHei';
+	
+	a{
+		color:#99CC33;
+	}
+}
+
+.site-nav{
+	background-color:$black;
+	nav{
+		@extend %clearfix;
+		font-size:14px;
+
+		a{
+			color:#9d9d9d;
+			float:left;
+			padding:15px;
+			line-height:20px;
+			text-decoration:none;
+			&:hover{
+				color:$white;
+				background-color:$c6;
+			}
+		}
+	}
+	
+}

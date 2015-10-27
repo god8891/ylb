@@ -1,0 +1,86 @@
+$black:#000;
+$c3:#333;
+$c6:#666;
+$c9:#999;
+$white:#fff;
+$left : left;
+$top : top;
+$left : left;
+$right : right;
+$bottom : bottom;
+$zero : 0;
+$num-ten : 10em;
+$hsize:1.6rem 1.4rem 1.2rem 1rem .8rem .8rem;
+$hline:2rem 1.8rem 1.4rem 1.2rem 1.2rem 1.2rem;
+$c3:#333;
+$c6:#666;
+$c9:#999;
+$c0:#000;
+$cf:#fff;
+$cd:#ddd;
+$ce:#eee;
+
+%clearfix{
+	zoom:1;
+	&:after{
+		content:"";
+		clear:both;
+		display:block;
+		height:0;
+	}
+}
+
+@mixin box($attr:box-sizing, $value:border-box){
+	-moz-#{$attr}:#{$value}; 
+	-webkit-#{$attr}:#{$value};
+	-ms-#{$attr}:#{$value};
+	#{$attr}:#{$value};
+}
+
+//和模型
+%box-sizing{
+	@include box(box-sizing, border-box);
+}
+
+//浮动
+%float-l{
+	float:left;
+}
+%float-r{
+	float:right;
+}
+%float-none{
+	float:none;
+}
+
+//居中
+%m-a{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+%mg-top-zero{
+	margin-top:$zero;
+}
+%mg-right-zero{
+	margin-right:$zero;
+}
+%mg-bottom-zero{
+	margin-bottom:$zero;
+}
+%mg-left-zero{
+	margin-left:$zero;
+}
+%pd-top-zero{
+	margin-top:$zero;
+}
+%pd-right-zero{
+	margin-right:$zero;
+}
+%pd-bottom-zero{
+	margin-bottom:$zero;
+}
+%pd-left-zero{
+	margin-left:$zero;
+}

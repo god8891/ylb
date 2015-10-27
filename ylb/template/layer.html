@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layer演示</title>
+	<link rel="stylesheet" href="../static/css/layer.css">
+</head>
+<body>
+	
+	<script>
+
+
+	</script>
+
+	<button id="l1">基本提示框</button>
+	<button id="l2">comfirm</button>
+	<button id="l3">promt</button>
+	<button id="l33">弹出一个图片</button>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p align="center"><button id="l4">tips</button></p>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p align="center"><button id="l6">tips</button></p>
+	<button id="l5">loading</button>
+	<!-- <div class="layer-container">
+		<div class="layer-contentWrap">
+			弹出提示层
+			<div class="layer-hint">
+				<strong class="layer-title">信息</strong>
+				<div class="layer-content">
+					这里就是文字描述
+				</div>
+				<a href="javascript:void(0);" class="layer-close">关闭</span>
+				<div class="layer-btn-wrap god-ag-center">
+					<a href="javascript:void(0);" class="layer-btn-hint" id="layer-hint">确定</a>
+				</div>
+			</div>
+			弹出询问层
+			<div class="layer-hint">
+				<strong class="layer-title">信息</strong>
+				<div class="layer-content">你确定打开新窗口吗？</div>
+				<a href="javascript:void(0);" class="layer-close">关闭</span>
+				<div class="layer-btn-wrap god-ag-right">
+					<a href="javascript:void(0);" class="layer-btn-hint" id="layer-hint">确定</a>
+					<a href="javascript:void(0);" class="layer-btn-hint" id="layer-cancel">取消</a>
+				</div>
+			</div>
+			弹出询问交互层
+			<div class="layer-hint">
+				<strong class="layer-title">请输入支付密码</strong>
+				<div class="layer-content"><input type="password" /></div>
+				<a href="javascript:void(0);" class="layer-close">关闭</span>
+				<div class="layer-btn-wrap god-ag-right">
+					<a href="javascript:void(0);" class="layer-btn-hint" id="layer-hint">支付</a>
+					<a href="javascript:void(0);" class="layer-btn-hint" id="layer-cancel">取消</a>
+				</div>
+			</div>
+			加载提示
+			<div class="layer-loading">
+				<div class="layer-loading-shade"></div>
+				<div class="layer-loading-content"><img src="../static/images/load.gif" width="36" height="36"></div>
+			</div>
+		</div>
+		<div class="layer-shade"></div>
+	</div> -->
+	<!-- <div class="layer-tips">
+		<i class="layer-tips-point layer-tips-point-bottom"></i>
+		<div class="layer-tips-content">
+			hi,我是一个tips
+		</div>
+	</div> -->
+
+	<!-- <div class="layer-loading">
+		<div class="layer-loading-wrap">
+			<div class="layer-loading-content"><img src="../static/images/load.gif" ></div>
+			<div class="layer-loading-shade"></div>
+		</div>
+		<div class="layer-shade"></div>
+	</div> -->
+	<script src="../static/lib/jquery/jquery-1.11.3.min.js"></script>
+	<script src="../static/js/layer.js"></script>
+	<script>
+		$('#l1').click(function(){
+			layer.alert({
+				type : 1,
+				title : '这里是标题',
+				content : '我们要定义自己的<br />弹出框'
+			});
+		});
+		$('#l2').click(function(){
+			layer.alert({
+				type : 2,
+				title : '奖品',
+				content : '恭喜你获得德玛西亚皮肤一件',
+				target : '_blank',
+				link : 'http://www.baidu.com',
+				btn : ['去使用','稍后使用'],
+				right : function(value, content, that){
+					console.log('你选择了确定');
+					/*layer.alert({
+						type : 1,
+						title : '这里是标题',
+						content : '我们要定义自己的<br />弹出框'
+					});*/
+				},
+				cancel : function(){}
+			});
+		});
+		$('#l3').click(function(){
+			layer.alert({
+				type : 3,
+				title : '请输入你要打开的网址！',
+				right : function(value, content){
+					if(value.length <= 0){
+						content.append($('<p style="color:red">请输入密码</p>'));
+						return false;
+					}
+					layer.alert({
+						type : 2,
+						title : '确认信息',
+						content : '你确定要打开' + value + '吗？',
+						link : value,
+						target : '_blank'
+					});
+					console.log(value);
+				}
+			});
+		});
+
+		$('#l4').click(function() {
+			layer.tips({
+				direction : 'bottom',
+				target : $(this)
+			});
+		});
+
+		$('#l5').click(function() {
+			var wrap = layer.loading({});
+
+			setTimeout(function() {
+				wrap.hide();
+			}, 3000);
+		});
+
+
+		$('#l33').click(function() {
+			var img = new Image();
+			img.src = '../static/images/k5.jpg';
+			img.onload = function(){
+				var that = this;
+				layer.alert({
+					type : 4,
+					title : '图片样张',
+					content : '<img src="'+ that.src +'">',
+					width :  that.width + 40
+				});
+			}
+			
+		});
+
+		var tips, timer;
+		$('#l6').hover(function(){
+			tips = layer.tips({more : true, direction : 'bottom',target : $(this), content:'<div>想要知道更多吗?<a href="#">点击查看</a></div>', auto : false});
+		},function(){
+			tips.hide(1000);
+		});
+	</script>
+</body>
+</html>

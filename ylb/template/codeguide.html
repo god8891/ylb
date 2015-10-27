@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编码规范 @Jie</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../static/css/codeguide.css">
+</head>
+<body class="regulate-body">
+	<header class="site-nav">
+		<div class="container">
+			<h1 class="site-title"><a href="index.html">前端建设</a></h1>
+			<nav>
+				<a href="#">css</a>
+				<a href="#">gulp</a>
+				<a href="#">h5动画库</a>
+				<a href="#">弹出层</a>
+			</nav>
+		</div>
+	</header>
+	<h2 class="regulate-title">编码规范 @Jie</h2>
+	<article class="regulate-nav">
+		<h2 class="regulate-subtitle">目录</h2>
+		<div class="regulate-box">
+			<section class="regulate-col">
+				<h3 class="title">html</h3>
+				<ul>
+					<li><a href="#html-gmr">语法</a></li>
+					<li><a href="#html-var">文档声明</a></li>
+					<li><a href="#html-notes">代码注释</a></li>
+					<li><a href="#html-order">属性顺序</a></li>
+					<li><a href="#html-IE">IE兼容</a></li>
+					<li><a href="#html-seo">SEO相关</a></li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<h3 class="title">css</h3>
+				<ul>
+					<li><a href="#css-gmr">语法</a></li>
+					<li><a href="#css-order">属性声明顺序</a></li>
+					<li><a href="#css-notes">注释</a></li>
+					<li><a href="#css-name">class命名</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col">
+				<h3 class="title">js</h3>
+				<ul>
+					<li><a href="#js-gmr">语法</a></li>
+					<li><a href="#js-notes">注释</a></li>
+					<li><a href="#js-pme">命名</a></li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<h3 class="title">工作相关</h3>
+				<ul>
+					<li><a href="#js-yd">约定</a></li>
+				</ul>
+			</div>
+		</div>
+	</article>
+
+	<article>
+		<h2 class="regulate-subtitle">html</h2>
+		<div class="regulate-box" id="html-gmr">
+			<section class="regulate-col">
+				<h3 class="title">语法</h3>
+				<ul>
+					<li>嵌套元素应当缩进一个制表符</li>
+					<li>缩进采用4个空格制表符（有可能表现不一致）</li>
+					<li>所有属性定义应当使用双引号，不要使用单页号</li>
+					<li>不要在自闭合标签尾部添加反斜线</li>
+					<li>不要省略可选的结束标签</li>
+					<li>统一使用utf8字符编码</li>
+					<li>所有boolean属性只需要写属性名称，无须赋值</li>
+					<li>可省略属性尽量省略</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="var">&lt;!DOCTYPE html&gt;</p>
+				<p><span class="tag">&lt;html&gt;</span></p>
+				<p><span class="tag tab2">&lt;head&gt;</span></p>
+				<p><span class="tag tab4">&lt;meta</span> <span class="attr">charset=</span><span class="val">"utf-8"</span><span class="tag">&gt;</span></p>
+				<p><span class="tag tab4">&lt;title&gt;</span>page title<span class="tag">&lt;/title&gt;</span></p>
+				<p><span class="tag tab4">&lt;link</span><span class="attr"> rel=</span><span class="val">"stylesheet"</span><span class="attr"> src=</span><span class="val">"path"</span><span class="tag">&gt;</span></p>
+				<p><span class="tag tab4">&lt;script</span><span class="attr"> src=</span><span class="val">"path"</span><span class="tag">&gt;&lt;/script&gt;</span></p>
+				<p><span class="tag tab2">&lt;/head&gt;</span></p>
+				<p><span class="tag tab2">&lt;body&gt;</span></p>
+				<p><span class="tab4">...</span></p>
+				<p><span class="tag tab2">&lt;/body&gt;</span></p>
+				<p><span class="tag">&lt;html&gt;</span></p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="html-var">
+				<h3 class="title">文档声明</h3>
+				<p class="txt">为每个 HTML 页面的第一行添加标准模式（standard mode）的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
+			</section>
+			<div class="regulate-col">
+				<p class="var">&lt;!DOCTYPE html&gt;</p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="html-notes">
+				<h3 class="title">代码注释</h3>
+				<p class="txt">一个好的书写习惯可以提高代码的可读性，那么添加注释必不可少</p>
+				<ul>
+					<li>html采用<span class="val"> &lt;!-- --&gt;</span></li>
+					<li>css采用 <span class="val"> /* ... */</span></li>
+					<li>js采用 <span class="val"> //...、/* ... */</span></li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="c9">&lt;--这是一个标题--&gt;</p>
+				<p><span class="tag">&lt;h1&gt;</span>title<span class="tag">&lt;/h1&gt;</span></p>
+				<p><span class="tag">&lt;style&gt;</span></p>
+				<p class="tab2 c9">/*这里是一段css代码*/</p>
+				<p><span class="tag">&lt;/style&gt;</span></p>
+				<p><span class="tag">&lt;script&gt;</span></p>
+				<p class="tab2 c9">//这里是一段JS代码</p>
+				<p><span class="tag">&lt;/style&gt;</span></p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="html-order">
+				<h3 class="title">属性顺序</h3>
+				<p class="txt">HTML 属性应当按照以下给出的顺序依次排列，确保代码的易读性。</p>
+				<ul>
+					<li><span class="val">id，name</span></li>
+					<li><span class="val">class</span></li>
+					<li><span class="val">width，height</span></li>
+					<li><span class="val">data-*</span></li>
+					<li><span class="val">src,href,type,for</span></li>
+					<li><span class="val">title, alt</span></li>
+				</ul>
+				<p class="txt">id，name为独立私有的属性，而class具有复用性，所以要比id，name低</p>
+			</section>
+			<div class="regulate-col">
+				<p><span class="tag">&lt;a </span><span class="attr"> class=</span><span class="val">"class"</span><span class="attr"> href=</span><span class="val">"path"</span><span class="attr"> title=</span><span class="val">"title"</span><span class="tag">&gt;</span></p>
+				<p><span class="tag">&lt;img</span><span class="attr"> src=</span><span class="val">"path"</span><span class="attr"> alt=</span><span class="val">"title"</span><span class="tag">&gt;</span></p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="html-IE">
+				<h3 class="title">IE 兼容模式</h3>
+				<p class="txt">IE 支持通过特定的 <meta> 标签来确定绘制当前页面所应该采用的 IE 版本。除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。</p>
+			</section>
+			<div class="regulate-col">
+				<p><span class="tag">&lt;meta</span><span class="attr"> http-equiv=</span><span class="val">"X-UA-Compatible"</span><span class="attr"> content=</span><span class="val">"IE=Edge"</span><span class="tag">&gt;</span></p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="html-seo">
+				<h3 class="title">SEO相关</h3>
+				<ul>
+					<li>头部注意书写关键字与描述性息</li>
+					<li>img标签注意属性alt属性</li>
+					<li>注意标题标签的使用次数</li>
+					<li>a标签建议填写title属性（有溢出省略时用之最好）</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p><span class="tag">&lt;meta</span><span class="attr"> name=</span><span class="val">"keywords"</span><span class="attr"> content=</span><span class="val">"key"</span><span class="tag">&gt;</span></p>
+				<p><span class="tag">&lt;meta</span><span class="attr"> name=</span><span class="val">"description"</span><span class="attr"> content=</span><span class="val">"description"</span><span class="tag">&gt;</span></p>
+				<p>&nbsp;</p>
+				<p><span class="tag">&lt;h1&gt;</span>页面中只出现1次的标题<span class="tag">&lt;/h1&gt;</span></p>
+				<p><span class="tag">&lt;h2&gt;</span>页面中只出现3-4次的标题(描述的是每一屏/模块的标题)<span class="tag">&lt;/h2&gt;</span></p>
+				<p><span class="tag">&lt;h3&gt;</span> - <span class="tag">&lt;h6&gt;</span>次数没有固定要求</p>
+			</div>
+		</div>
+	</article>
+
+	<article>
+		<h2 class="regulate-subtitle">css</h2>
+		<div class="regulate-box">
+			<section class="regulate-col" id="css-gmr">
+				<h3 class="title">语法</h3>
+				<ul>
+					<li>嵌套元素应当缩进一个制表符</li>
+					<li>为了代码的易读性，在每个声明块的左花括号前添加一个空格。</li>
+					<li>所有声明语句都应当以分号结尾。最后一条声明语句后面的分号是可选的，但是，如果省略这个分号，你的代码可能更易出错。</li>
+					<li>对于以逗号分隔的属性值，每个逗号后面都应该插入一个空格</li>
+					<li>不要在 rgb()、rgba()、hsl()、hsla() 或 rect() 值的内部的逗号后面插入空格。这样利于从多个属性值（既加逗号也加空格）中区分多个颜色值（只加逗号，不加空格）。</li>
+					<li>对于属性值或颜色参数，省略小于 1 的小数前面的 0</li>
+					<li>尽量使用简写形式的十六进制值</li>
+					<li>避免为 0 值指定单位</li>
+					<li>为了获得更准确的错误报告，每条声明都应该独占一行</li>
+					<li>每条声明语句的 : 后应该插入一个空格。</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="c9">/* Bad CSS */</p>
+				<p><span class="cs">.selector</span><span class="c9">,</span> <span class="cs">.selector-secondary</span><span class="c9">,</span> <span class="cs">.selector[type=text]</span> {</p>
+				<p class="c6"><span class="attr tab2">padding:</span><span class="val">15px</span>;</p>
+				<p class="c6"><span class="attr tab2">margin:</span><span class="val">0px 0px 15px</span>;</p>
+				<p class="c6"><span class="attr tab2">background-color:</span><span class="val">rgba(0, 0, 0, 0.5)</span>;</p>
+				<p>}</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p class="c9">/* good CSS */</p>
+				<p class="c9"><span class="cs">.selector</span>, </p>
+				<p class="c9"><span class="cs">.selector-secondary</span>, </p>
+				<p><span class="cs">.selector[type=text]</span> {</p>
+				<p class="c6"><span class="attr tab2">padding:</span><span class="val"> 15px</span>;</p>
+				<p class="c6"><span class="attr tab2">margin:</span><span class="val"> 0 0 15px</span>;</p>
+				<p class="c6"><span class="attr tab2">background-color:</span><span class="val"> rgba(0,0,0,.5)</span>;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="css-order">
+				<h3 class="title">属性声明顺序</h3>
+				<p class="txt">相关的属性声明应当归为一组，并按照下面的顺序排列：</p>
+				<ul>
+					<li>Positioning</li>
+					<li>Box model</li>
+					<li>Typographic</li>
+					<li>Visual</li>
+				</ul>
+				<p class="txt">css3提供的特效个人觉得应该属于Visual里面，所有大家在它后面写就好了</p>
+			</section>
+			<div class="regulate-col">
+				<p><span class="cs">.selector</span> {</p>
+				<p class="c9 tab2">/* Positioning */</p>
+				<p class="c6"><span class="attr tab2">position:</span><span class="val"> absolute</span>;</p>
+				<p class="c6"><span class="attr tab2">top:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">right:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">bottom:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">left:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">z-index:</span><span class="val"> 1000</span>;</p>
+				<p>&nbsp;</p>
+				<p class="c9 tab2">/* Box model */</p>
+				<p class="c6"><span class="attr tab2">display:</span><span class="val"> box</span>;</p>
+				<p class="c6"><span class="attr tab2">float:</span><span class="val"> left</span>;</p>
+				<p class="c6"><span class="attr tab2">width:</span><span class="val"> 100px</span>;</p>
+				<p class="c6"><span class="attr tab2">height:</span><span class="val"> 100px</span>;</p>
+				<p class="c6"><span class="attr tab2">padding:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">border:</span><span class="val"> 1px solid #ddd</span>;</p>
+				<p class="c6"><span class="attr tab2">margin:</span><span class="val"> 0</span>;</p>
+				<p>&nbsp;</p>
+				<p class="c9 tab2">/* Typographic */</p>
+				<p class="c6"><span class="attr tab2">font:</span><span class="val"> normal 14px/1.5 "Helvetica Neue", sans-serif</span>;</p>
+				<p class="c6"><span class="attr tab2">color:</span><span class="val"> #666</span>;</p>
+				<p class="c6"><span class="attr tab2">text-align:</span><span class="val"> center</span>;</p>
+				<p>&nbsp;</p>
+				<p class="c9 tab2">/* Visual */</p>
+				<p class="c6"><span class="attr tab2">background:</span><span class="val"> color img</span>;</p>
+				<p class="c6"><span class="attr tab2">opacity:</span><span class="val"> .5</span>;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="css-notes">
+				<h3 class="title">注释</h3>
+				<p class="txt">代码是由人编写并维护的。请确保你的代码能够自描述、注释良好并且易于他人理解。好的代码注释能够传达上下文关系和代码目的。不要简单地重申组件或 class 名称</p>
+				<p>&nbsp;</p>
+				<p class="txt">对于较长的注释，务必书写完整的句子；对于一般性注解，可以书写简洁的短语。</p>
+				<p>&nbsp;</p>
+				<p>如果是多人合作的项目，在写注释时一定要加上描述、作者、时间</p>
+			</section>
+			<div class="regulate-col">
+				<p class="c9">/*</p>
+				<p class="c9 tab2">description：以下到下一个同样的注释前，是文章页的所有样式</p>
+				<p class="c9 tab2">ather：张三</p>
+				<p class="c9 tab2">update：2015-10-9</p>
+				<p class="c9">*/</p>
+				<p class="c9">/* 文章主体内容样式 */</p>
+				<p><span class="cs">.selector</span> {</p>
+				<p class="c6"><span class="attr tab2">position:</span><span class="val"> absolute</span>;</p>
+				<p class="c6"><span class="attr tab2">top:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">right:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">bottom:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">left:</span><span class="val"> 0</span>;</p>
+				<p class="c6"><span class="attr tab2">z-index:</span><span class="val"> 1000</span>;</p>
+				<p>}</p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="css-name">
+				<h3 class="title">class 命名</h3>
+				<ul>
+					<li>可以根据当前区域添加前缀命名</li>
+					<li>可以参考设计图的模块进行命名</li>
+					<li>不要使用拼音，尽量用英文命名</li>
+					<li>class 名称应当尽可能短，并且意义明确</li>
+					<li>使用破折号-连接</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="c9">/*网站头部*/</p>
+				<p><span class="cs">.site-head</span> {</p>
+				<p class="c6 tab2">...</p>
+				<p>}</p>
+				<p>&nbsp;</p>
+				<p><span class="cs">.site-head .title</span> {</p>
+				<p class="c6 tab2">...</p>
+				<p>}</p>
+			</div>
+		</div>
+	</article>
+
+	<article>
+		<h2 class="regulate-subtitle">js</h2>
+		<div class="regulate-box">
+			<section class="regulate-col" id="js-gmr">
+				<h3 class="title">语法</h3>
+				<ul>
+					<li>缩进一个制表符</li>
+					<li>变量声明都写在头部</li>
+					<li>变量名过多时，换行书写</li>
+					<li>函数左大括号之前空一个空格，右大括号另起一行</li>
+					<li>函数可以使用函数表达式与变量声明写在一起</li>
+					<li>使用驼峰命名</li>
+					<li>使用单引号</li>
+					<li>运算符2边添加空格</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="c9"><span class="var">var</span><span class="attr"> name = </span><span class="val">'张三'</span>,</p>
+				<p class="c9 tab2"><span class="attr">age = </span><span class="val">28</span>,</p>
+				<p class="c9 tab2"><span class="attr">sex = </span><span class="val">'女'</span>,</p>
+				<p class="tab2"><span class="attr">showHello = </span><span class="fun">function()</span> {</p>
+				<p class="c9"><span class="tag tab4">alert(</span>'hello word'<span class="tag">)</span>;</p>
+				<p class="tab2">}<span class="c9">;</span></p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="js-notes">
+				<h3 class="title">注释</h3>
+				<ul>
+					<li>方法、接口采用JSDOC注释格式</li>
+					<li>对于复杂业务逻辑写详细注释</li>
+					<li>没必要每行都写注释</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p class="c9">/*</p>
+				<p class="c9 tab2">@author zhangsan</p>
+				<p class="c9 tab2">@description 一个选项卡切换特效</p>
+				<p class="c9 tab2">@since version 0.1 </p>
+				<p class="c9 tab2">@param {Arr} titles 选项卡所有标题集合</p>
+				<p class="c9 tab2">@param {Arr} contents 选项卡所有内容集合</p>
+				<p class="c9">*/</p>
+				<p><span class="fun">function</span> <span class="attr">tabChange(titles, contents)</span> {</p>
+				<p><span class="c6 tab2">...</span></p>
+				<p>}</p>
+			</div>
+		</div>
+		<div class="regulate-box">
+			<section class="regulate-col" id="js-pme">
+				<h3 class="title">变量命名</h3>
+				<ul>
+					<li>变量命名应该语义化</li>
+					<li>为方便了解变量类型，应加上变量类型后缀（arrary = Arr string = str object = Obj function = fun number = Num boolean = Bool （jquery = $为前缀））</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				<p><span class="fun">function</span> <span class="attr">tabChange(titles, contents)</span> {</p>
+				<p><span class="tab2 var">var</span><span class="attr"> titleObj</span> = <span class="val">document.getElementById('id')</span>;</p>
+				<p><span class="tab4 attr">$dom</span> = <span class="val">$("#id")</span>;</p>
+				<p>}</p>
+			</div>
+		</div>
+	</article>
+	<article>
+		<h2 class="regulate-subtitle">工作相关</h2>
+		<div class="regulate-box">
+			<section class="regulate-col" id="js-yd">
+				<h3 class="title">语法</h3>
+				<ul>
+					<li>网站需兼容IE8及以上版本</li>
+					<li>不得在页面内编写style样式，不得在标签上添加css属性</li>
+					<li>做到代码分离原则，尽量不要在页面中书写过多js代码</li>
+				</ul>
+			</section>
+			<div class="regulate-col">
+				
+			</div>
+		</div>
+	</article>
+</body>
+</html>

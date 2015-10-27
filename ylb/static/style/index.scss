@@ -1,0 +1,51 @@
+@charset 'utf-8';
+@import 'global/global';
+
+.index-banner{
+	padding:100px 0;
+	background-color:#5B4181;
+	color:$white;
+	font-size:36px;
+	text-align:center;
+}
+
+
+//首页样式
+.idx-item{
+	border:1px solid #ddd;
+	padding:5px;
+	margin-top:15px;
+	.title{
+		line-height:20px;
+		margin:0;
+		font-size:28px;
+		height:80px;
+		line-height:80px;
+		text-align:center;
+		background-color:#ddd;
+		font-weight:normal;
+		a{
+			color:$white;
+			display:block;
+		}
+	}
+	summary{
+		line-height:24px;
+		padding:20px 15px 0;
+		height:100px;
+		text-align:center;
+	}
+}
+
+
+$bgColor1:#6F5499 #0099CC #CF4646 #F46722 #1FA67A;
+@for $i from 1 through 5{
+	.idx-perfix{
+		&:nth-child(#{$i}){
+			.title{
+				background-color:nth($bgColor1, $i);
+			}
+		}
+	}
+	
+}
